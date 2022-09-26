@@ -21,3 +21,19 @@ for($j = 0; $j < $i; $j++){
         $newStr = '';
     }
 }
+
+// second method with single loop ==>
+
+while(isset($str[$i])){
+
+    $newStr .= $str[$i];
+
+    if(isset($str[++$i]) === false){
+        $res = ' '. $newStr . $res;
+        $newStr = '';
+    }
+    elseif($str[$i] == ' '){
+        $res = ' '. $newStr . $res;
+        $newStr = '';
+    }
+}
