@@ -37,3 +37,28 @@ while(isset($str[$i])){
         $newStr = '';
     }
 }
+
+
+/** Algo to iterate the letters with no of repeatation continuously */
+
+// ---------------------------------------------------- problem ==> 2 ---------------------------------------------------------
+
+$string = "aabbbbccab";     // a2b4c2a1b1
+$letter = '';
+$lastNumber = 0;
+$result = '';
+
+for($i=0; $i <= strlen($string); $i++){
+    if($letter != $string[$i]){
+        $letter = $string[$i];
+
+        if($i != $lastNumber){
+            $diff = $i - $lastNumber;
+            $lastNumber = $i;
+            $result .= $diff;
+        }
+        $result .= $letter; 
+    }
+}
+
+echo $result;
