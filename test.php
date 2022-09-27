@@ -49,15 +49,22 @@ $lastNumber = 0;
 $result = '';
 
 for($i=0; $i <= strlen($string); $i++){
-    if($letter != $string[$i]){
-        $letter = $string[$i];
-
-        if($i != $lastNumber){
+    
+    if($i == strlen($string)){
             $diff = $i - $lastNumber;
             $lastNumber = $i;
             $result .= $diff;
+    }else{
+        if($letter != $string[$i]){
+            $letter = $string[$i];
+    
+            if($i != $lastNumber){
+                $diff = $i - $lastNumber;
+                $lastNumber = $i;
+                $result .= $diff;
+            }
+            $result .= $letter; 
         }
-        $result .= $letter; 
     }
 }
 
